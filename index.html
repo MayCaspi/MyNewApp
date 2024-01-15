@@ -5,31 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTW App Template</title>
-    <!--
-        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
-        Read more here: https://tailwindcss.com/docs/installation 
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
-    <style>
-        /*examples for dark/light themes*/
-        .dark .dark\:text-white {
-            color: #fff;
-        }
-        .dark .dark\:bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .light .light\:text-black {
-            color: #000;
-        }
+   <style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size:large
+    }
+    .container{
+        width: 230px;
+        margin: 50px auto;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
+        background-color: lightgray;
+        border-color: darkgray;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
 
-        /*add your custom css rules here*/
-    </style>
+
+    }
+    .monitor{
+        /* vertical-align:middle; */
+        width:93%;
+        background-color: white;
+        border-radius: 5px;
+        margin:5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-color: darkgray;
+        border-style: solid;
+        background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+        font-size: xx-large;
+    
+        
+
+
+    }
+    .but,
+    .butWide,
+    .butOperators {
+        float:left;
+        vertical-align: middle;
+        border-radius: 5px;
+        margin: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, .04));
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05);
+        
+
+    }
+
+    .butWide {
+        background-color: #6495ED;
+        width: 80%;
+    }
+    .but {
+        width: 65px; 
+        background-color:gray;
+    }      
+
+    .but:hover,
+    .butWide:hover,
+    .butOperators:hover{
+        background-color: #333;
+    }
+   
+    .butOperators{
+        background-color: darkgray;border-radius: 5px;
+        width: 50px;
+       
+    }
+    
+    
+   </style>
 </head>
 
-<body class="dark:text-white light:text-black">
+<body>
 
     <!-- your app code goes here -->
+    <div class="container">
+        <div class="monitor">0</div>
+        <div class="but">1</div>
+        <div class="but">2</div>
+        <div class="but">3</div>
+        <div class="but">4</div>
+        <div class="but">5</div>
+        <div class="but">6</div>
+        <div class="but">7</div>
+        <div class="but">8</div>
+        <div class="but">9</div>
+        <div class="butOperators">+</div>
+        <div class="but">0</div>
+        <div class="butOperators">-</div>
+        <div class="butWide">=</div>
+        <div style="clear:both"></div>
+    </div>
 
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
