@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing and Meal Planning Platform</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom styles here */
+        /* Adjustments for images */
+        .recipe-img {
+            object-fit: cover;
+            height: 200px; /* Adjust as needed */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-serif">
+    <!-- Navigation Bar -->
+    <nav class="bg-purple-500 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-semibold text-white">Recipe Platform</a>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white hover:text-gray-200">Home</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200">Recipes</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200">Meal Planner</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200">Shopping List</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-purple-700 py-20 text-center text-white">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold">Welcome to Recipe Platform</h1>
+            <p class="mt-4 text-lg md:text-xl">Share your favorite recipes, plan your meals, and generate shopping lists effortlessly.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto py-8">
+        <section class="mb-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-4">Featured Recipes</h2>
+                <div id="featuredRecipes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Featured recipe cards will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-4">Meal Planner</h2>
+                <!-- Meal planner interface will be added here -->
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-4">Shopping List</h2>
+                <!-- Shopping list interface will be added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-purple-500 py-4 text-center text-white">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Recipe Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sample fake recipe data
+        const recipes = [
+            { name: "Spaghetti Carbonara", description: "Classic Italian pasta dish with bacon, eggs, and cheese.", image: "https://via.placeholder.com/400x200" },
+            { name: "Chicken Alfredo", description: "Creamy pasta dish with grilled chicken and Parmesan cheese.", image: "https://via.placeholder.com/400x200" },
+            { name: "Vegetable Stir Fry", description: "Colorful mix of fresh vegetables cooked with soy sauce and ginger.", image: "https://via.placeholder.com/400x200" }
+        ];
+
+        // Function to generate HTML for featured recipes
+        function generateFeaturedRecipesHTML(recipes) {
+            const featuredRecipesContainer = document.getElementById('featuredRecipes');
+            let html = '';
+            recipes.forEach(recipe => {
+                html += `
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <img class="w-full recipe-img" src="${recipe.image}" alt="${recipe.name}">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">${recipe.name}</div>
+                            <p class="text-gray-700 text-base">${recipe.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            featuredRecipesContainer.innerHTML = html;
+        }
+
+        // Generate featured recipes HTML
+        generateFeaturedRecipesHTML(recipes);
+    </script>
+</body>
+
+</html>
